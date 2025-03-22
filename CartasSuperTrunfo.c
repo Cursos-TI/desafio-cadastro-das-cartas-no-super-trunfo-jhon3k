@@ -9,6 +9,8 @@ int main (){
     float areaAoQuadrado;
     float pib;
     int NumerodePontosTuristicos;
+    float calDenPopu;
+    float calPIBperCapital;
 
     // Variáveis da Carta 2.
     char segundoEstado[20];
@@ -18,6 +20,8 @@ int main (){
     float segundoAreaAoQuadrado;
     float segundoPib;
     int segundoNumerodePontosTuristicos;
+    float calDenPopuSegundaCarta;
+    float calPIBperCapitalSegundaCarta;
 
     // Printf de introdução ao jogo Super Trunfo.
     printf("Bem-vindo ao jogo Super Trunfo! \nVamos forma a primeira carta:\n");
@@ -95,19 +99,34 @@ int main (){
     printf("A quantidade de pontos turísticos na cidade: \n");
     // Scanf para receber e guardar a resposta do usuário.
     scanf("%d", &segundoNumerodePontosTuristicos);
+
+    //calculo da densidade populacional primeira carta
+    calDenPopu = (float) numeroHabitantes / areaAoQuadrado;
+    //calculo do PIB per Capita primeira carta
+    calPIBperCapital = (float) pib / numeroHabitantes;
+
+    //calculo da densidade populacional segunda carta
+    calDenPopuSegundaCarta = (float) segundoNumeroHabitantes / segundoAreaAoQuadrado;
+    //calculo do PIB per Capita segunda carta
+    calPIBperCapitalSegundaCarta = (float) segundoPib / segundoNumeroHabitantes;
+
     
     // Printfs que seram exibidas
     printf("\nCarta 1: \n");
     printf("Estado: %s  \nCódigo: %s \n", estado, codigoDaCarta);
     printf("Nome da Cidade: %s  \nPupulação: %d \n", nomeCidade, numeroHabitantes);
-    printf("Área: %f km² \nPIB: %f \n", areaAoQuadrado, pib);
+    printf("Área: %.2f km² \nPIB: %.2f bilhões de reais\n", areaAoQuadrado, pib);
     printf("Número de Pontos Turísticos: %d \n", NumerodePontosTuristicos);
+    printf("Densidade Populacional: %.2f hab/km²\n", calDenPopu);
+    printf("PIB per Capita: %.2f reais\n", calPIBperCapital);
 
     printf("\nCarta 2: \n");
     printf("Estado: %s \nCódigo: %s \n", segundoEstado, codigoDaSegundaCarta);
     printf("Nome da Cidade: %s  \nPupulação: %d \n", segundoNomeCidade, segundoNumeroHabitantes);
-    printf("Área: %f km² \nPIB: %f \n", segundoAreaAoQuadrado, segundoPib);
-    printf("Número de Pontos Turísticos: %d", segundoNumerodePontosTuristicos);
+    printf("Área: %.2f km² \nPIB: %.2f bilhões de reais\n", segundoAreaAoQuadrado, segundoPib);
+    printf("Número de Pontos Turísticos: %d\n", segundoNumerodePontosTuristicos);
+    printf("Densidade Populacional %.2f hab/km²\n", calDenPopuSegundaCarta);
+    printf("PIB per Capita: %.2f reais\n", calPIBperCapitalSegundaCarta);
 
     return 0;
 }
