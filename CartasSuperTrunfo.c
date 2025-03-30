@@ -22,7 +22,7 @@ int main (){
     int segundoNumerodePontosTuristicos;
     float calDenPopuSegundaCarta;
     float calPIBperCapitalSegundaCarta;
-
+    
     // Printf de introdução ao jogo Super Trunfo.
     printf("Bem-vindo ao jogo Super Trunfo! \nVamos forma a primeira carta:\n");
 
@@ -110,7 +110,12 @@ int main (){
     //calculo do PIB per Capita segunda carta
     calPIBperCapitalSegundaCarta = (float) segundoPib / segundoNumeroHabitantes;
 
+    //Variáveis para exibir o resultado 
+
+    float SuperPoder = (float) numeroHabitantes + areaAoQuadrado + (float)NumerodePontosTuristicos + pib + calPIBperCapital + (1 / calDenPopu) + NumerodePontosTuristicos; 
     
+    float SuperPoderSegundaCarta = (float) segundoNumeroHabitantes + segundoAreaAoQuadrado + (float)segundoNumerodePontosTuristicos + segundoPib + calPIBperCapitalSegundaCarta + (1 / calDenPopuSegundaCarta) + segundoNumerodePontosTuristicos;
+
     // Printfs que seram exibidas
     printf("\nCarta 1: \n");
     printf("Estado: %s  \nCódigo: %s \n", estado, codigoDaCarta);
@@ -119,6 +124,7 @@ int main (){
     printf("Número de Pontos Turísticos: %d \n", NumerodePontosTuristicos);
     printf("Densidade Populacional: %.2f hab/km²\n", calDenPopu);
     printf("PIB per Capita: %.2f reais\n", calPIBperCapital);
+    printf("Super Poder: %.2f\n", SuperPoder);
 
     printf("\nCarta 2: \n");
     printf("Estado: %s \nCódigo: %s \n", segundoEstado, codigoDaSegundaCarta);
@@ -127,6 +133,17 @@ int main (){
     printf("Número de Pontos Turísticos: %d\n", segundoNumerodePontosTuristicos);
     printf("Densidade Populacional %.2f hab/km²\n", calDenPopuSegundaCarta);
     printf("PIB per Capita: %.2f reais\n", calPIBperCapitalSegundaCarta);
+    printf("Super Poder: %.2f\n", SuperPoderSegundaCarta);
+
+    //Printfs para exibir o resultado da comparação
+    printf("\nComparação de Cartas:\n");
+    printf("População: %d\n", numeroHabitantes > segundoNumeroHabitantes );
+    printf("Área: %d\n", areaAoQuadrado > segundoAreaAoQuadrado);
+    printf("PIB: %d\n", pib > segundoPib);
+    printf("Pontos Turísticos: %d\n", NumerodePontosTuristicos > segundoNumerodePontosTuristicos);
+    printf("Densidade Populacional: %d\n", calDenPopu > calDenPopuSegundaCarta);
+    printf("PIB per Capita: %d\n", calPIBperCapital > calPIBperCapitalSegundaCarta);
+    printf("Super Poder: %d\n", SuperPoder > SuperPoderSegundaCarta);
 
     return 0;
 }
