@@ -145,5 +145,19 @@ int main (){
     printf("PIB per Capita: %d\n", calPIBperCapital > calPIBperCapitalSegundaCarta);
     printf("Super Poder: %d\n", SuperPoder > SuperPoderSegundaCarta);
 
+    //tema 2 - comparação de atributos
+    printf("Comparação de cartas (Atributo: PIB per capita):\n");
+    printf("Carta 1 - %s: %.2f\n", estado, calPIBperCapital);
+    printf("Carta 2 - %s: %.2f\n", segundoEstado, calPIBperCapitalSegundaCarta);
+    
+    if (calPIBperCapital > calPIBperCapitalSegundaCarta)
+    {
+        printf("Resultado: Carta 1 %s venceu!\n", nomeCidade);
+    }
+    else
+    {
+        printf("Resultado: Carta 2 %s venceu!\n", segundoNomeCidade);
+    }
+    
     return 0;
 }
